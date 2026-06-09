@@ -1,0 +1,1902 @@
+```html id="shakya-group-premium-site"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>shakya Group – IDEA TO EMPIRE</title>
+
+  <meta
+    name="description"
+    content="shakya Group helps startups and businesses scale with HR, Marketing & Technology solutions from idea to execution."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --primary:#4f46e5;
+      --secondary:#0ea5e9;
+      --accent:#8b5cf6;
+
+      --bg:#050816;
+      --bg2:#0f172a;
+      --card:rgba(255,255,255,0.06);
+
+      --text:#ffffff;
+      --muted:#94a3b8;
+
+      --border:rgba(255,255,255,0.1);
+
+      --shadow:0 20px 50px rgba(0,0,0,0.35);
+
+      --radius:24px;
+
+      --container:1280px;
+
+      --transition:all .35s ease;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Inter",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,.14), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(14,165,233,.12), transparent 30%);
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    section{
+      padding:120px 7%;
+      position:relative;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--container);
+      margin:auto;
+    }
+
+    .section-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 18px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid var(--border);
+      color:#cbd5e1;
+      margin-bottom:20px;
+      font-size:.9rem;
+      backdrop-filter:blur(12px);
+    }
+
+    .section-title{
+      font-size:clamp(2.2rem,5vw,4.6rem);
+      line-height:1.05;
+      font-weight:900;
+      margin-bottom:18px;
+      letter-spacing:-2px;
+    }
+
+    .section-subtitle{
+      max-width:760px;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      border:none;
+      outline:none;
+      cursor:pointer;
+
+      padding:16px 28px;
+
+      border-radius:999px;
+
+      background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+      );
+
+      color:#fff;
+      font-weight:700;
+
+      transition:var(--transition);
+
+      box-shadow:
+        0 12px 35px rgba(79,70,229,.35);
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      box-shadow:
+        0 18px 45px rgba(14,165,233,.28);
+    }
+
+    .btn-outline{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:none;
+    }
+
+    .btn-outline:hover{
+      background:rgba(255,255,255,0.06);
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:70px;
+      align-items:center;
+    }
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(40px);
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .fade-up.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+
+      transition:var(--transition);
+
+      background:rgba(5,8,22,.5);
+
+      backdrop-filter:blur(16px);
+
+      border-bottom:1px solid transparent;
+    }
+
+    header.scrolled{
+      background:rgba(5,8,22,.9);
+      border-color:rgba(255,255,255,.06);
+    }
+
+    .navbar{
+      max-width:var(--container);
+      margin:auto;
+
+      padding:2px 7%;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .logo img{
+       width: 170px;
+  height: 170px;          /* same as width for a perfect circle */
+  object-fit: cover;      /* crops and centers the image within the circle */
+  border-radius: 50%;     /* makes the element circular */
+  margin-bottom: 22px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:32px;
+    }
+
+    .nav-links a{
+      position:relative;
+      color:#dbe4ff;
+      font-size:.95rem;
+      transition:var(--transition);
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:0;
+      height:2px;
+      background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+      );
+      transition:var(--transition);
+    }
+
+    .nav-links a:hover{
+      color:#fff;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .contact-mini{
+      color:#cbd5e1;
+      font-size:.9rem;
+      white-space:nowrap;
+    }
+
+    .menu-btn{
+      display:none;
+      background:none;
+      border:none;
+      color:#fff;
+      font-size:1.7rem;
+      cursor:pointer;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      padding-top:180px;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          rgba(5,8,22,.76),
+          rgba(5,8,22,.82)
+        ),
+        url("https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1600");
+
+      background-size:cover;
+      background-position:center;
+
+      z-index:-2;
+
+      animation:zoomBg 18s ease-in-out infinite alternate;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .hero-content h1{
+      font-size:clamp(3rem,8vw,6.5rem);
+      line-height:.95;
+      letter-spacing:-3px;
+      margin-bottom:24px;
+      font-weight:900;
+    }
+
+    .gradient-text{
+      background:linear-gradient(
+        135deg,
+        #ffffff,
+        #c7d2fe,
+        #7dd3fc
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-content p{
+      color:#dbe4ff;
+      font-size:1.1rem;
+      max-width:650px;
+      margin-bottom:35px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-bottom:40px;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:25px;
+    }
+
+    .stat-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:22px;
+      padding:24px;
+      backdrop-filter:blur(12px);
+    }
+
+    .stat-card h3{
+      font-size:2rem;
+      margin-bottom:5px;
+    }
+
+    .stat-card p{
+      margin:0;
+      font-size:.92rem;
+      color:#94a3b8;
+    }
+
+    .hero-visual{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:600px;
+    }
+
+    .glass-card{
+      position:absolute;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(18px);
+
+      border-radius:28px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .main-card{
+      width:360px;
+      padding:32px;
+      z-index:3;
+    }
+
+    .main-card h3{
+      font-size:1.5rem;
+      margin-bottom:18px;
+    }
+
+    .mini-card{
+      width:180px;
+      padding:18px;
+    }
+
+    .card-1{
+      top:40px;
+      left:20px;
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .card-2{
+      bottom:60px;
+      right:10px;
+      animation:float 5s ease-in-out infinite;
+    }
+
+    .glow{
+      position:absolute;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(79,70,229,.35),
+          transparent 70%
+        );
+      filter:blur(20px);
+      z-index:-1;
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-14px);
+      }
+    }
+
+    @keyframes zoomBg{
+      from{
+        transform:scale(1);
+      }
+      to{
+        transform:scale(1.1);
+      }
+    }
+
+    /* ECOSYSTEM */
+
+    .ecosystem{
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          rgba(255,255,255,.01)
+        );
+    }
+
+    .bullet-list{
+      display:grid;
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .bullet{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+
+      padding:20px;
+
+      border-radius:20px;
+
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      transition:var(--transition);
+    }
+
+    .bullet:hover{
+      transform:translateX(8px);
+      border-color:rgba(255,255,255,0.15);
+    }
+
+    .bullet-icon{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+      );
+
+      flex-shrink:0;
+
+      font-size:1.3rem;
+    }
+
+    .ecosystem-visual{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      min-height:520px;
+    }
+
+    .globe{
+      width:320px;
+      height:320px;
+      border-radius:50%;
+
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.3), transparent 20%),
+        linear-gradient(135deg,var(--primary),var(--secondary));
+
+      position:relative;
+
+      box-shadow:
+        0 0 90px rgba(79,70,229,.35),
+        inset -20px -20px 40px rgba(0,0,0,.25);
+
+      animation:spin 20s linear infinite;
+    }
+
+    .globe::before,
+    .globe::after{
+      content:"";
+      position:absolute;
+      inset:30px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .globe::after{
+      inset:65px;
+    }
+
+    .orbit{
+      position:absolute;
+      width:450px;
+      height:450px;
+      border-radius:50%;
+      animation:orbit 14s linear infinite;
+    }
+
+    .orbit.reverse{
+      animation-direction:reverse;
+      animation-duration:18s;
+    }
+
+    .orbit-item{
+      position:absolute;
+      top:-22px;
+      left:50%;
+      transform:translateX(-50%);
+
+      width:90px;
+      height:90px;
+
+      border-radius:50%;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.14);
+
+      backdrop-filter:blur(14px);
+
+      box-shadow:var(--shadow);
+    }
+
+    @keyframes spin{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    @keyframes orbit{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    /* SERVICES */
+
+    .services-grid{
+      margin-top:70px;
+
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+
+    .service-card{
+      position:relative;
+
+      overflow:hidden;
+
+      padding:36px;
+
+      border-radius:28px;
+
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      transition:var(--transition);
+
+      backdrop-filter:blur(14px);
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(79,70,229,.22),
+          rgba(14,165,233,.08)
+        );
+
+      opacity:0;
+
+      transition:var(--transition);
+    }
+
+    .service-card:hover::before{
+      opacity:1;
+    }
+
+    .service-card:hover{
+      transform:translateY(-12px);
+      border-color:rgba(255,255,255,.16);
+    }
+
+    .service-icon{
+      width:72px;
+      height:72px;
+      border-radius:20px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+      );
+
+      margin-bottom:28px;
+
+      font-size:2rem;
+
+      position:relative;
+      z-index:1;
+    }
+
+    .service-card h3{
+      position:relative;
+      z-index:1;
+
+      margin-bottom:20px;
+
+      font-size:1.7rem;
+    }
+
+    .service-card ul{
+      list-style:none;
+
+      display:grid;
+      gap:14px;
+
+      position:relative;
+      z-index:1;
+    }
+
+    .service-card li{
+      color:#dbe4ff;
+
+      display:flex;
+      gap:12px;
+    }
+
+    .service-card li::before{
+      content:"✦";
+      color:#7dd3fc;
+    }
+
+    /* WHY */
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .reasons{
+      display:grid;
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .reason{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+
+      padding:20px;
+
+      border-radius:22px;
+
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      transition:var(--transition);
+    }
+
+    .reason:hover{
+      transform:translateX(8px);
+    }
+
+    .reason-icon{
+      width:56px;
+      height:56px;
+
+      border-radius:18px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+      );
+
+      flex-shrink:0;
+    }
+
+    .quote{
+      margin-top:35px;
+
+      padding:30px;
+
+      border-radius:24px;
+
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      font-size:1.2rem;
+      font-weight:600;
+    }
+
+    .image-stack{
+      position:relative;
+      min-height:620px;
+    }
+
+    .image-stack img{
+      position:absolute;
+      object-fit:cover;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .img-1{
+      width:72%;
+      height:380px;
+      top:0;
+      left:0;
+    }
+
+    .img-2{
+      width:58%;
+      height:300px;
+      bottom:0;
+      right:0;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:
+        radial-gradient(circle at top right, rgba(79,70,229,.25), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(14,165,233,.2), transparent 30%);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      margin-top:60px;
+    }
+
+    .contact-card,
+    .info-card{
+      padding:40px;
+
+      border-radius:30px;
+
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(18px);
+
+      box-shadow:var(--shadow);
+    }
+
+    .form-grid{
+      display:grid;
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+
+    input,
+    textarea,
+    select{
+      width:100%;
+
+      padding:16px 18px;
+
+      border-radius:18px;
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      background:rgba(255,255,255,0.05);
+
+      color:#fff;
+
+      font-family:inherit;
+
+      transition:var(--transition);
+
+      outline:none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus{
+      border-color:var(--secondary);
+
+      box-shadow:
+        0 0 0 4px rgba(14,165,233,.12);
+    }
+
+    textarea{
+      resize:vertical;
+      min-height:150px;
+    }
+
+    option{
+      background:#0f172a;
+    }
+
+    .info-list{
+      display:grid;
+      gap:24px;
+      margin-top:35px;
+    }
+
+    .info-item h4{
+      color:#7dd3fc;
+      margin-bottom:6px;
+    }
+
+    .motto{
+      margin-top:40px;
+
+      padding-top:24px;
+
+      border-top:1px solid rgba(255,255,255,0.08);
+
+      font-size:1.3rem;
+      font-weight:700;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:80px 7% 35px;
+
+      border-top:1px solid rgba(255,255,255,0.08);
+
+      background:#02030a;
+    }
+
+    .footer-grid{
+      max-width:var(--container);
+      margin:auto;
+
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr 1fr;
+      gap:40px;
+    }
+
+    .footer-logo img {
+  width: 170px;
+  height: 170px;          /* same as width for a perfect circle */
+  object-fit: cover;      /* crops and centers the image within the circle */
+  border-radius: 50%;     /* makes the element circular */
+  margin-bottom: 22px;
+}
+
+    .footer-about p{
+      color:var(--muted);
+      max-width:360px;
+    }
+
+    .footer-column h4{
+      margin-bottom:18px;
+      font-size:1.05rem;
+    }
+
+    .footer-column ul{
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .footer-column li,
+    .footer-column a{
+      color:var(--muted);
+      transition:var(--transition);
+      font-size:.95rem;
+    }
+
+    .footer-column a:hover{
+      color:#fff;
+      padding-left:4px;
+    }
+
+    .footer-bottom{
+      max-width:var(--container);
+      margin:50px auto 0;
+
+      padding-top:25px;
+
+      border-top:1px solid rgba(255,255,255,0.08);
+
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1100px){
+
+      .hero-grid,
+      .grid-2,
+      .why-grid,
+      .contact-grid,
+      .services-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-visual{
+        min-height:500px;
+      }
+
+      .image-stack{
+        min-height:500px;
+      }
+    }
+
+    @media(max-width:850px){
+
+      section{
+        padding:100px 6%;
+      }
+
+      .navbar{
+        padding: 14px 6%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: top 0.3s ease-in-out;
+        z-index: 1000;
+        background: white;
+      }
+
+      .nav-links{
+        position:fixed;
+        top:80px;
+        left:-100%;
+
+        width:100%;
+        height:auto;
+
+        background:#08101f;
+
+        flex-direction:column;
+
+        padding:30px;
+
+        transition:var(--transition);
+
+        border-bottom:1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links.active{
+        left:0;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .contact-mini{
+        display:none;
+      }
+
+      .hero{
+        padding-top:150px;
+      }
+
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      .main-card{
+        width:100%;
+        max-width:360px;
+      }
+
+      .orbit{
+        width:320px;
+        height:320px;
+      }
+
+      .globe{
+        width:230px;
+        height:230px;
+      }
+
+      .orbit-item{
+        width:70px;
+        height:70px;
+        font-size:.85rem;
+      }
+    }
+
+    @media(max-width:640px){
+
+      .section-title{
+        font-size:2.4rem;
+      }
+
+      .hero-content h1{
+        font-size:3rem;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .image-stack{
+        min-height:420px;
+      }
+
+      .img-1{
+        width:100%;
+        position:relative;
+        height:250px;
+      }
+
+      .img-2{
+        width:80%;
+        height:200px;
+      }
+
+      .contact-card,
+      .info-card,
+      .service-card{
+        padding:28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header id="header">
+    <div class="navbar">
+
+      <a href="#" class="logo">
+        <img
+          src="/image/image2.png"
+          alt="shakya Group Logo"
+          loading="lazy"
+        />
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#ecosystem">About</a>
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-right">
+
+        <a href="#contact" class="btn">
+          Let's Connect
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-bg"></div>
+
+    <div class="container hero-grid">
+
+      <div class="hero-content fade-up">
+
+        <div class="section-tag">
+          🚀 Ahmedabad Startup Ecosystem Partner
+        </div>
+
+        <h1>
+          <span class="gradient-text">
+            Building Startups.
+          </span>
+          <br />
+          Scaling Businesses.
+        </h1>
+
+        <p>
+           We empower businesses with innovative, reliable, and result-driven professional services designed to accelerate growth and long-term success. Our expertise spans Human Resource Recruitment, Business Development, IT Solutions, Digital Marketing, and Supply Chain Management, enabling organizations to streamline operations, strengthen their market presence, and achieve sustainable business performance.
+        </p>
+        <p>
+            With a client-centric approach and a commitment to excellence, we deliver customized solutions tailored to the unique needs of every business. From connecting companies with top talent and advanced technology solutions to enhancing brand visibility and optimizing operational efficiency, we provide comprehensive support that drives measurable results.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#services" class="btn">
+            🚀 Explore Our Ecosystem
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Talk To Experts
+          </a>
+        </div>
+
+        <div class="hero-stats">
+
+          <div class="stat-card">
+            <h3>360°</h3>
+            <p>Business Ecosystem Support</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>HR + MKT + TECH</h3>
+            <p>Integrated Growth Services</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>IDEA → EMPIRE</h3>
+            <p>Execution Focused Strategy</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-visual fade-up">
+
+        <div class="glow"></div>
+
+        <div class="glass-card mini-card card-1">
+          <h4>📈 Growth</h4>
+          <p>Business Scaling</p>
+        </div>
+
+        <div class="glass-card main-card">
+
+          <div class="section-tag">
+            “IDEA TO EMPIRE”
+          </div>
+
+          <h3>
+            Complete Startup Ecosystem
+          </h3>
+
+          <p style="color:#dbe4ff;">
+            We empower startups and businesses with
+            execution-driven solutions designed for real growth.
+          </p>
+
+          <div
+            style="
+              margin-top:24px;
+              display:grid;
+              gap:14px;
+            "
+          >
+            <div>👥 HR Solutions</div>
+            <div>📢 Marketing Solutions</div>
+            <div>💻 Tech Solutions</div>
+          </div>
+
+        </div>
+
+        <div class="glass-card mini-card card-2">
+          <h4>🚀 Strategy</h4>
+          <p>Execution Driven</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ECOSYSTEM -->
+
+  <section class="ecosystem" id="ecosystem">
+
+    <div class="container grid-2">
+
+      <div class="fade-up">
+
+        <div class="section-tag">
+          🌍 Startup Ecosystem
+        </div>
+
+        <h2 class="section-title">
+          From Vision To Execution
+        </h2>
+
+        <p class="section-subtitle">
+          shakya Group is a complete startup ecosystem company helping
+          businesses transform ideas into scalable operations.
+          Our ecosystem combines HR, Marketing, and Technology to
+          create sustainable business growth.
+        </p>
+
+        <div class="bullet-list">
+
+          <div class="bullet">
+            <div class="bullet-icon">
+              🚀
+            </div>
+
+            <div>
+              <h4>End-to-End Support</h4>
+
+              <p style="color:#94a3b8;">
+                Complete strategic and operational support for startups
+                and growing businesses.
+              </p>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="bullet-icon">
+              💡
+            </div>
+
+            <div>
+              <h4>Idea To Scale</h4>
+
+              <p style="color:#94a3b8;">
+                Helping businesses move from planning to execution
+                and long-term growth.
+              </p>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="bullet-icon">
+              📍
+            </div>
+
+            <div>
+              <h4>Ahmedabad Based</h4>
+
+              <p style="color:#94a3b8;">
+                Building a strong startup ecosystem from Gujarat
+                for businesses across India.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="ecosystem-visual fade-up">
+
+        <div class="orbit">
+          <div class="orbit-item">
+            👥
+            <small>HR</small>
+          </div>
+        </div>
+
+        <div class="orbit reverse">
+          <div class="orbit-item">
+            📢
+            <small>MKT</small>
+          </div>
+        </div>
+
+        <div class="globe"></div>
+
+        <div
+          class="orbit-item"
+          style="
+            position:absolute;
+            bottom:30px;
+            top:auto;
+          "
+        >
+          💻
+          <small>TECH</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="fade-up">
+
+        <div class="section-tag">
+          ⚡ Growth Solutions
+        </div>
+
+        <h2 class="section-title">
+          Services That Drive Results
+        </h2>
+
+        <p class="section-subtitle">
+          Tailored solutions for startups and mid-level businesses
+          looking to scale smarter and faster.
+        </p>
+
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card fade-up">
+
+          <div class="service-icon">
+            👥
+          </div>
+
+          <h3>
+            HR Solutions
+          </h3>
+
+          <ul>
+            <li>Hiring & Recruitment</li>
+            <li>Onboarding Process</li>
+            <li>HR Consulting & Policies</li>
+            <li>Performance Management</li>
+            <li>Talent Strategy</li>
+          </ul>
+
+        </div>
+
+        <div class="service-card fade-up">
+
+          <div class="service-icon">
+            📢
+          </div>
+
+          <h3>
+            Marketing Solutions
+          </h3>
+
+          <ul>
+            <li>Ad Campaign Management</li>
+            <li>LinkedIn & Instagram Handling</li>
+            <li>Social Media Marketing</li>
+            <li>Reels & Creative Branding</li>
+            <li>Growth Strategy</li>
+          </ul>
+
+        </div>
+
+        <div class="service-card fade-up">
+
+          <div class="service-icon">
+            💻
+          </div>
+
+          <h3>
+            Tech Solutions
+          </h3>
+
+          <ul>
+            <li>Website & Logo Design</li>
+            <li>Email & Network Security</li>
+            <li>Endpoint Security & VAPT</li>
+            <li>Custom Tech Consulting</li>
+            <li>Startup Tech Infrastructure</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY US -->
+
+  <section id="why-us">
+
+    <div class="container why-grid">
+
+      <div class="fade-up">
+
+        <div class="section-tag">
+          ⭐ Why shakya Group
+        </div>
+
+        <h2 class="section-title">
+          Your Growth Is Our Mission
+        </h2>
+
+        <div class="reasons">
+
+          <div class="reason">
+
+            <div class="reason-icon">
+              🌐
+            </div>
+
+            <div>
+              <h4>Complete Ecosystem</h4>
+
+              <p style="color:#94a3b8;">
+                HR, Marketing & Technology solutions under one roof.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="reason">
+
+            <div class="reason-icon">
+              🧠
+            </div>
+
+            <div>
+              <h4>Expert Team</h4>
+
+              <p style="color:#94a3b8;">
+                Strategic experts focused on execution and measurable growth.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="reason">
+
+            <div class="reason-icon">
+              📈
+            </div>
+
+            <div>
+              <h4>Growth Focused</h4>
+
+              <p style="color:#94a3b8;">
+                Every strategy is built to improve business performance.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="reason">
+
+            <div class="reason-icon">
+              ⚙️
+            </div>
+
+            <div>
+              <h4>Customized Plans</h4>
+
+              <p style="color:#94a3b8;">
+                Solutions tailored to your business stage and goals.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="quote">
+          “Your growth is our mission. From Idea to Empire.”
+        </div>
+
+      </div>
+
+      <div class="image-stack fade-up">
+
+        <img
+          class="img-1"
+          src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Startup Team Meeting"
+          loading="lazy"
+        />
+
+        <img
+          class="img-2"
+          src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Business Growth Chart"
+          loading="lazy"
+        />
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="fade-up">
+
+        <div class="section-tag">
+          📞 Contact Us
+        </div>
+
+        <h2 class="section-title">
+          Let’s Build Your Empire
+        </h2>
+
+        <p class="section-subtitle">
+          Tell us about your business goals and our team will connect
+          with you shortly.
+        </p>
+
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card fade-up">
+
+          <form
+            name="shakya-contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="form-grid"
+          >
+
+            <input
+              type="hidden"
+              name="form-name"
+              value="shakya-contact"
+            />
+
+            <p hidden>
+              <label>
+                Don’t fill this out:
+                <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="form-row">
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+
+            </div>
+
+            <div class="form-row">
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+              />
+
+              <select name="service" required>
+                <option value="">
+                  Select Service
+                </option>
+
+                <option>
+                  HR Solutions
+                </option>
+
+                <option>
+                  Marketing Solutions
+                </option>
+
+                <option>
+                  Tech Solutions
+                </option>
+
+                <option>
+                  Startup Consulting
+                </option>
+              </select>
+
+            </div>
+
+            <textarea
+              name="message"
+              placeholder="Tell us about your business..."
+              required
+            ></textarea>
+
+            <button type="submit" class="btn">
+              🚀 Start Your Growth Journey Today
+            </button>
+
+          </form>
+
+        </div>
+
+        <div class="info-card fade-up">
+
+          <h3 style="font-size:2rem;">
+            Contact Details
+          </h3>
+
+          <div class="info-list">
+
+            <div class="info-item">
+              <h4>📞 Phone</h4>
+              <p>+91 98765 43210</p>
+            </div>
+
+            <div class="info-item">
+              <h4>✉️ Email</h4>
+              <p>contact@shakyagroup.com</p>
+            </div>
+
+            <div class="info-item">
+              <h4>🌐 Website</h4>
+              <p>www.shakyagroup.com</p>
+            </div>
+
+            <div class="info-item">
+              <h4>📍 Location</h4>
+              <p>Ahmedabad, Gujarat, India</p>
+            </div>
+
+            <div class="info-item">
+              <h4>📱 Social Handles</h4>
+              <p>@shakyagroup</p>
+            </div>
+
+          </div>
+
+          <div class="motto">
+            From Vision to Success.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-about">
+
+        <div class="footer-logo">
+          <img
+            src="/image/image.png"
+            alt="shakya Group Logo"
+            loading="lazy"
+          />
+        </div>
+
+        <p>
+          shakya Group is an Ahmedabad-based startup ecosystem company
+          helping startups and businesses scale through HR, Marketing,
+          and Technology solutions.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#ecosystem">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h4>Services</h4>
+
+        <ul>logo
+          <li>HR Solutions</li>
+          <li>Marketing Solutions</li>
+          <li>Tech Solutions</li>
+          <li>Startup Consulting</li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h4>Contact</h4>
+
+        <ul>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ contact@shakyagroup.com</li>
+          <li>📍 Ahmedabad, India</li>
+          <li>🌐 www.shakyagroup.com</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 shakya Group. All Rights Reserved.
+      </p>
+
+      <p>
+        IDEA TO EMPIRE 🚀
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    // HEADER SCROLL
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if(window.scrollY > 50){
+        header.classList.add("scrolled");
+      }else{
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+    // MOBILE MENU
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+
+    });
+
+    // FADE ANIMATION
+
+    const observer = new IntersectionObserver((entries)=>{
+
+      entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+          entry.target.classList.add("active");
+        }
+
+      });
+
+    },{
+      threshold:0.15
+    });
+
+    document.querySelectorAll(".fade-up").forEach((el)=>{
+      observer.observe(el);
+    });
+
+  </script>
+
+</body>
+</html>
+```
